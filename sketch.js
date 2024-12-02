@@ -3,7 +3,8 @@ let isAnimating = false;
 let animationStartTime;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight / 3);
+    let canvas = createCanvas(windowWidth, windowHeight / 3);
+    canvas.parent('breath-section'); 
     background("whitesmoke");
 
     ball = {
@@ -14,6 +15,7 @@ function setup() {
         originalSize: 50,
         originalColor: "#92a7fe"
     };
+    
 }
 
 function draw() {
@@ -34,26 +36,31 @@ function draw() {
         }
     }
 
+    // Draw the ball with a stroke effect for the outer circle
     noFill();
     stroke("whitesmoke");
     strokeWeight(4);
     ellipse(ball.x, ball.y, ball.size + 10);
 
+    // Fill the ball with the dynamic color
     noStroke();
     fill(ball.color);
-    ellipse(ball.x, ball.y, ball.size); 
+    ellipse(ball.x, ball.y, ball.size);
 
+    // Show "Inhale" or "Exhale" text based on the elapsed time
     let innerText = "Inhale";
     if (elapsedTime > 3000 && elapsedTime <= 6000) {
         innerText = "Exhale";
     }
 
+    // Dynamic text size based on ball size
     let textSizeFactor = lerp(15, 25, (ball.size - ball.originalSize) / 70);
     fill("whitesmoke");
     textSize(textSizeFactor);
     textAlign(CENTER, CENTER);
     text(innerText, ball.x, ball.y);
 
+    // Static instructions text at the bottom of the canvas
     fill(ball.originalColor);
     textSize(20);
     textAlign(CENTER, CENTER);
@@ -61,6 +68,7 @@ function draw() {
 }
 
 function mousePressed() {
+    // Check if the mouse click is within the ball's area and toggle animation
     let d = dist(mouseX, mouseY, ball.x, ball.y);
     if (d < ball.size / 2) {
         isAnimating = !isAnimating;

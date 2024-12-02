@@ -49,3 +49,26 @@ ul {
         line-height: 1.2rem;
     }
 }
+
+.drawing-section {
+    background-color: #cbbd93;
+    color: whitesmoke;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        line-height: 1.2rem;
+    }
+    p {
+        padding-bottom: 1rem;
+        line-height: 1.2rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+.wave-container{
+    background-color: #cbbd93;
+}
