@@ -79,4 +79,9 @@ ul {
 
 footer{
     background-color: black;
+    height: 2rem;
+}
+
+#draw-section {
+    margin-bottom: -3px;
 }
