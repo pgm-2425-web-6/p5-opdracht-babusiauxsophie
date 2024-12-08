@@ -1,1 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/22-pQvBd)
+Het eerste canvas bevat een bal. Wanneer je op de bal klikt, begint de animatie. De bal wordt groter met de tekst "Inhale". Zodra de bal zijn maximale grootte heeft bereikt, krimpt de bal weer met de tekst "Exhale". Ontspannende zee-geluiden beginnen te spelen zodra je de bal aanklikt. Als je de bal opnieuw aanklikt, keert de bal terug naar zijn oorspronkelijke toestand en stopt het geluid.
+
+Het tweede canvas is bedoeld om in het zand te tekenen. Wanneer je op dit canvas klikt, kun je in het zand tekenen. De zee-geluiden spelen ook wanneer je begint te tekenen. Zodra je de muis loslaat, verdwijnt de tekening en stopt het zee-geluid.
