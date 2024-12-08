@@ -2,6 +2,11 @@ const sketch = (p) => {
     let ball;
     let isAnimating = false;
     let animationStartTime;
+    let oceanSound;
+
+    p.preload = () => {
+        oceanSound = p.loadSound('ocean.mp3');
+    };
 
     p.setup = () => {
         let canvas = p.createCanvas(p.windowWidth, p.windowHeight / 3);
@@ -65,10 +70,25 @@ const sketch = (p) => {
         let d = p.dist(p.mouseX, p.mouseY, ball.x, ball.y);
         if (d < ball.size / 2) {
             isAnimating = !isAnimating;
+
             if (isAnimating) {
                 animationStartTime = p.millis();
+                if (!oceanSound.isPlaying()) {
+                    oceanSound.loop();
+                    oceanSound.setVolume(0.5);
+                }
+            } else {
+                ball.size = ball.originalSize;
+                ball.color = ball.originalColor;
+                oceanSound.stop();
             }
         }
+    };
+
+    p.windowResized = () => {
+        p.resizeCanvas(p.windowWidth, p.windowHeight / 3);
+        ball.x = p.width / 2;
+        ball.y = p.height / 3;
     };
 };
 
